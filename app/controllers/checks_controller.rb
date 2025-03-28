@@ -24,7 +24,6 @@ class ChecksController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
 
   private
 
@@ -44,21 +43,6 @@ class ChecksController < ApplicationController
     params[:check][:image].is_a?(String) && params[:check][:image].start_with?("data:image")
   end
 
-  # def attach_base64_image
-  #   return unless base64_image_provided?
-  
-  #   base64_string = params[:check][:image].split(',')[1]
-  #   image_data = Base64.decode64(base64_string)
-  
-  #   blob = ActiveStorage::Blob.create_and_upload!(
-  #     io: StringIO.new(image_data),
-  #     filename: "check_#{SecureRandom.hex(8)}.png",
-  #     content_type: "image/png"
-  #   )
-  
-  #   @check.image.attach(blob)
-  # end
-
   def attach_base64_image
     base64_string = params[:check][:image].split(',')[1] # Extract Base64 data
     decoded_image = Base64.decode64(base64_string) # Decode Base64
@@ -72,26 +56,4 @@ class ChecksController < ApplicationController
   
     @check.image.attach(blob) # Attach image properly
   end
-  
-  # def attach_base64_image
-  #   return unless base64_image_provided?
-  
-  #   base64_string = params[:check][:image].split(',')[1]
-  #   image_data = Base64.decode64(base64_string)
-  
-  #   puts "Base64 image size: #{image_data.bytesize} bytes"  # Debugging line
-  
-  #   blob = ActiveStorage::Blob.create_and_upload!(
-  #     io: StringIO.new(image_data),
-  #     filename: "check_#{SecureRandom.hex(8)}.png",
-  #     content_type: "image/png"
-  #   )
-  
-  #   puts "Blob created? #{blob.persisted?}" # Check if blob is created
-  
-  #   @check.image.attach(blob)
-  #   puts "Image attached? #{@check.image.attached?}" # Check if image is actually attached
-  # end
-  
-  
 end
