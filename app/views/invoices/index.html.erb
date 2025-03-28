@@ -1,0 +1,11 @@
+<h2 class="page-title">Invoices for <%= @company.name %></h2>
+
+<div class="invoice-container">
+  <% @invoices.each do |invoice| %>
+    <%= render "common/invoice_card", invoice: invoice, company: @company %>
+  <% end %>
+</div>
+
+<div class="upload-btn-container">
+  <%= link_to "Upload New Invoice", new_company_invoice_path(@company), class: "upload-btn" %>
+</div>

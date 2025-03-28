@@ -1,0 +1,327 @@
+.page-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 20px;
+  }
+  
+  .company-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .company-card {
+    width: 320px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+  
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  .company-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+  }
+  
+  .company-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .company-btn {
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+  
+    &.checks-btn {
+      background: #007aff;
+  
+      &:hover {
+        background: #005ecb;
+      }
+    }
+  
+    &.invoices-btn {
+      background: #34c759;
+  
+      &:hover {
+        background: #28a745;
+      }
+    }
+  
+    &.show-btn {
+      background: #8e8e93;
+  
+      &:hover {
+        background: #636366;
+      }
+    }
+  }
+  
+  .new-company-container {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .new-company-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+    background: #ff9500;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+  
+    &:hover {
+      background: #cc7a00;
+    }
+  }
+  
+
+  //show page styles
+
+  /* app/assets/stylesheets/company.scss */
+
+.company-container {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 15px;
+}
+
+.records-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.record-card {
+  width: 260px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.record-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.record-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1d1d1f;
+}
+
+.record-status {
+  font-size: 14px;
+  color: #666;
+}
+
+.view-link {
+  display: block;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  background: #007aff;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+.view-link-invoice {
+  background: #34c759;
+}
+
+.no-records {
+  text-align: center;
+  color: #6e6e73;
+  font-size: 14px;
+}
+
+
+//show 
+
+.company-container {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.invoices-header {
+  margin: 30px 0 15px;
+}
+
+.records-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.record-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 250px;
+  text-align: center;
+}
+
+.record-image {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.record-title,
+.record-status {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.view-link {
+  display: inline-block;
+  text-decoration: none;
+  background: #007bff;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.view-link-invoice {
+  background: #28a745;
+}
+
+.no-records {
+  font-size: 16px;
+  color: #888;
+}
+
+//new
+
+
+.page-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-secondary {
+  background: #007aff;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #005bb5;
+}
+
+//form
+
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-primary {
+  background: #007aff;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #005bb5;
+}

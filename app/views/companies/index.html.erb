@@ -1,0 +1,18 @@
+<h1 class="page-title">Companies</h1>
+
+<div class="company-container">
+  <% @companies.each do |company| %>
+    <div class="company-card">
+      <h5 class="company-name"><%= company.name %></h5>
+      <div class="company-links">
+        <%= link_to "View Checks", company_checks_path(company), class: "company-btn checks-btn" %>
+        <%= link_to "View Invoices", company_invoices_path(company), class: "company-btn invoices-btn" %>
+        <%= link_to "Show Company", company_path(company), class: "company-btn show-btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="new-company-container">
+  <%= link_to "New Company", new_company_path, class: "new-company-btn" %>
+</div>

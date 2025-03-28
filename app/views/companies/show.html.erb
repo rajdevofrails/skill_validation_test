@@ -1,0 +1,33 @@
+<div class="company-container">Checks</div>
+
+<% if @company.checks.any? %>
+  <div class="records-container">
+    <% @company.checks.each do |check| %>
+      <div class="record-card">
+        <%= image_tag rails_blob_url(check.image), class: "record-image" if check.image.present? %>
+        <p class="record-title"><strong>Check #:</strong> <%= check.number %></p>
+        <p class="record-status"><strong>Status:</strong> <%= check.status %></p>
+        <%= link_to "View", company_check_path(@company, check), class: "view-link" %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p class="no-records">No checks available for this company.</p>
+<% end %>
+
+<div class="company-container invoices-header">Invoices</div>
+
+<% if @company.invoices.any? %>
+  <div class="records-container">
+    <% @company.invoices.each do |invoice| %>
+      <div class="record-card">
+        <%= image_tag rails_blob_url(invoice.image), class: "record-image" if invoice.image.present? %>
+        <p class="record-title"><strong>Category:</strong> <%= invoice.category %></p>
+        <p class="record-status"><strong>Status:</strong> <%= invoice.status %></p>
+        <%= link_to "View", company_invoice_path(@company, invoice), class: "view-link view-link-invoice" %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p class="no-records">No invoices available for this company.</p>
+<% end %>

@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <div class="card check-card-container border-0">
+    <h2 class="check-title">Check #<%= @check.number %></h2>
+
+    <% if @check.image.present? %>
+      <div class="check-image-container">
+        <%= image_tag rails_blob_url(@check.image), class: "check-image" %>
+      </div>
+    <% end %>
+
+    <p class="check-status">
+      <strong>Status:</strong> <span class="badge bg-primary"><%= @check.status %></span>
+    </p>
+
+    <p class="check-invoices">
+      <strong>Associated Invoices:</strong>
+      <% if @check.invoices.any? %>
+        <span class="text-success"><%= @check.invoices.pluck(:category).join(", ") %></span>
+      <% else %>
+        <span class="text-muted">No invoices linked</span>
+      <% end %>
+    </p>
+
+    <div class="back-button">
+      <%= link_to "Back", company_checks_path(@company), class: "btn btn-secondary px-4" %>
+    </div>
+  </div>
+</div>
