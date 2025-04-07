@@ -1,0 +1,23 @@
+<h2 class="checks-title">
+  Checks for <%= @company.name %>
+</h2>
+
+<div class="checks-container">
+  <% @checks.each do |check| %>
+    <div class="check-card">
+      <% if check.image.present? %>
+        <%= image_tag rails_blob_url(check.image), class: "check-image" %>
+      <% end %>
+      <div class="check-details">
+        <p><strong>Check #:</strong> <%= check.number %></p>
+        <p class="check-status"><strong>Status:</strong> <%= check.status %></p>
+        <p class="check-invoices"><strong>Invoices:</strong> <%= check.invoices.pluck(:category).join(', ') %></p>
+      </div>
+      <%= link_to "View", company_check_path(@company, check), class: "view-link" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="upload-link">
+  <%= link_to "Upload New Check", new_company_check_path(@company), class: "upload-button" %>
+</div>

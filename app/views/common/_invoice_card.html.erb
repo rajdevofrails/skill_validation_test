@@ -1,0 +1,10 @@
+<div class="invoice-card">
+  <% if invoice.image.present? %>
+    <%= image_tag rails_blob_url(invoice.image), class: "invoice-img" %>
+  <% end %>
+  <div class="invoice-details">
+    <p><strong>Category:</strong> <%= invoice.category %></p>
+    <p class="invoice-status"><strong>Status:</strong> <%= invoice.status %></p>
+  </div>
+  <%= link_to "View", company_invoice_path(@company, invoice), class: "invoice-view-btn" %>
+</div>

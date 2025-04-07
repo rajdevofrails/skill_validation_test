@@ -1,0 +1,11 @@
+<h2 class="invoice-header">Invoice Details</h2>
+
+<% if @invoice.image.present? %>
+  <%= image_tag rails_blob_url(@invoice.image), class: "invoice-image" %>
+<% end %>
+
+<p class="invoice-detail"><strong>Category:</strong> <%= @invoice.category %></p>
+<p class="invoice-detail"><strong>Status:</strong> <%= @invoice.status %></p>
+<p class="invoice-detail"><strong>Associated Checks:</strong> <%= @invoice.checks.pluck(:number).join(", ") %></p>
+
+<%= link_to "Back", company_invoices_path(@company), class: "invoice-back-btn" %>

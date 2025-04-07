@@ -1,0 +1,16 @@
+<div class="upload-check-container">
+  <h2 class="upload-title">Upload New Check</h2>
+
+  <% if @check.errors.any? %>
+    <div class="alert">
+      <h4><%= pluralize(@check.errors.count, "error") %> prevented this check from being saved:</h4>
+      <ul class="error-list">
+        <% @check.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= render "form", check: @check %>
+</div>

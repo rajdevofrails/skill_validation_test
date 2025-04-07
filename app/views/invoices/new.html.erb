@@ -1,0 +1,9 @@
+<h2 class="page-title">Upload New Invoice</h2>
+
+<div class="form-container">
+  <%= render "form", invoice: @invoice %>
+</div>
+
+<div class="back-link-container">
+  <%= link_to "Back to Invoices", company_invoices_path(@company), class: "back-link" %>
+</div>
