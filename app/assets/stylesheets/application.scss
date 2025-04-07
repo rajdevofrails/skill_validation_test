@@ -8,10 +8,11 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
-@import "bootstrap";
-@import "company";
-@import "check";
-@import "invoices";
+@use "company";
+@use "check";
+@use "invoices";
+@use "bootstrap/scss/bootstrap" as *;
+
 
 
 
